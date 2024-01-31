@@ -1,53 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+   --white: hsl(0, 0%, 100%);
+   --light-gray: hsl(212, 45%, 89%);
+   --grayish-blue: hsl(220, 15%, 55%);
+   --dark-blue: hsl(218, 44%, 22%);
+}
+
+html {
+   font-size: 62.5%;
 }
 
 body {
-  background-color: #d5e1ef;
-}
+   font-family: "Outfit", sans-serif;
+   font-size: 1.6rem;
 
-div {
-  background-color: #ffffff;
-  box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.0476518);
-  width: 320px;
-  height: 497px;
-  border-radius: 20px;
-  padding: 16px;
-
-  /* Center Div */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+   background-color: var(--light-gray);
 }
 
 img {
-  max-width: 100%;
-  border-radius: 10px;
+   width: 100%;
+   border-radius: 1rem;
 }
 
-h1,
-p {
-  font-family: "Outfit", sans-serif;
-  text-align: center;
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
 }
 
-h1 {
-  color: #1f314f;
-  font-weight: 700;
-  font-size: 22px;
-  padding-top: 24px;
+.card {
+   max-width: 34rem;
+   background-color: var(--white);
+   padding: 1.6rem;
+   margin: 2rem;
+   border-radius: 2rem;
+
+   box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.0476518);
 }
 
-p {
-  color: #7d889e;
-  font-weight: 400;
-  font-size: 15px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
+.information {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.information h1 {
+   color: var(--dark-blue);
+
+   margin: 2rem 0;
+}
+
+.information p {
+   margin-bottom: 2rem;
+   color: var(--grayish-blue);
+   padding: 0 1.5rem;
+}
+
+@media (max-width: 320px) {
+   html {
+      font-size: 43.75%;
+   }
+}
+
+@media (min-width: 321px) and (max-width: 380px) {
+   html {
+      font-size: 50%;
+   }
+}
+
+@media (min-width: 1920px) {
+   html {
+      font-size: 68.75%;
+   }
 }
